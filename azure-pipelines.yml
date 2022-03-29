@@ -7,7 +7,7 @@ trigger:
   - main
 
 pool:
-  vmImage: 'windows-latest' # set to windows-latest or another Windows vmImage for Windows builds
+  vmImage: 'ubuntu-latest' # set to windows-latest or another Windows vmImage for Windows builds
 
 variables:
   imageName: 'pipelines-javascript-docker'
@@ -16,6 +16,6 @@ steps:
 - task: Docker@2
   displayName: Build an image
   inputs:
-      repository: $(Windows-Latest)
+      repository: $(imageName)
       command: build
       Dockerfile: app/Dockerfile
